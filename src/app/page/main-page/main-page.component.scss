@@ -1,0 +1,20 @@
+app-header{ 
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+}
+app-sidebar{ 
+    z-index: 2;
+    position: fixed;
+
+}
+main{
+        width: calc(100% - 80px);
+        margin-left: 80px;
+        background-color: #F9F4E8;
+        height: 100vh;
+        z-index: 0;
+        top: 0;
+        position: relative;
+        
+}

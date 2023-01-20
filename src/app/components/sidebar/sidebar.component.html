@@ -1,0 +1,65 @@
+<div class="sidenav-container" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+    <!-- <div class="expand-btn" (click)="ChangeSideView(e)">>></div> -->
+<div class="sidenav">
+    <div class="logo-container d-flex" (click)="ChangeSideView()" >
+        <div class="img-wrapper"> 
+            <img class="logo-img"  src="assets/icon/Pepsi-logo.png" alt="">
+        </div>
+        <div class="img-wrapper ms-3" *ngIf="collapsed">
+            <img class="logo-text" src="assets/icon/Pepsico.png" alt="">
+        </div>
+    </div>
+    <ul class="nav-list border-white">
+        <li class="nav-list-item border-white" [routerLink]="['/dashboard']" >
+            <!-- <div class="name-on-hover">
+                <div class="text-on-hover">
+                    Dashboard
+                </div>
+            </div> -->
+            <div class="selector active" ></div>
+            <img class="icon" src="assets/icon/Dashboard.png" alt="">
+            <span class="border-white" *ngIf="collapsed">
+                <a>Dashboard</a>
+            </span>
+        </li>
+        <li class="border-white subhead">
+            <span [ngClass]="collapsed ? 'sidenav-subhead' : 'sidenav-subhead2'">
+                <a>Nielsen</a>
+            </span>
+        </li>
+        <li class="nav-list-item border-white" *ngFor="let item of nielsenList" [routerLink]="[item.routerLink]">
+            <div class="selector" ></div>
+            <img class="icon" src="{{item.icon}}" alt="" >
+            <span class="border-white" *ngIf="collapsed">
+                <a>{{item.name}}</a>
+            </span>
+        </li>
+
+        <li class="border-white subhead">
+            <span [ngClass]="collapsed ? 'sidenav-subhead' : 'sidenav-subhead2'">
+                <a>Internal</a>
+            </span>
+        </li>
+        <li class="nav-list-item border-white">
+            <div class="selector"></div>
+            <img class="icon" src="assets/icon/summary.png" alt="">
+            <span class="border-white" *ngIf="collapsed">
+                <a>Trade Spend Summary</a>
+            </span>
+        </li>
+        <li class="border-white subhead">
+            <span [ngClass]="collapsed ? 'sidenav-subhead' : 'sidenav-subhead2'">
+                <a>Media</a>
+            </span>
+        </li>
+        <li class="nav-list-item border-white" *ngFor="let item of mediaList">
+            <div class="selector"></div>
+            <img class="icon" src="{{item.icon}}" alt="">
+            <span class="border-white" *ngIf="collapsed">
+                <a>{{item.name}}</a>
+            </span>
+        </li>
+    </ul>
+
+</div>
+</div>
